@@ -46,6 +46,12 @@ pip install .
 blind_watermark --embed --pwd 1234 examples/pic/ori_img.jpeg "watermark text" examples/output/embedded.png
 # extract watermark from image:
 blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
+# run an attack on watermarked image:
+blind_watermark --attack shelter examples/output/embedded.png examples/output/attacked.png
+# run an attack and generate comparison image:
+blind_watermark --attack shelter examples/output/embedded.png examples/output/attacked.png \
+    --origin examples/pic/ori_img.jpeg --wm_text "watermark text" \
+    --compare examples/output/compare.png
 ```
 
 
