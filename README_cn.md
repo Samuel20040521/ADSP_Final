@@ -41,6 +41,10 @@ pip install .
 blind_watermark --embed --pwd 1234 examples/pic/ori_img.jpeg "watermark text" examples/output/embedded.png
 # 提取水印：
 blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
+# 运行攻击并生成比较图：
+blind_watermark --attack shelter examples/output/embedded.png examples/output/attacked.png \
+    --origin examples/pic/ori_img.jpeg --wm_text "watermark text" \
+    --compare examples/output/compare.png
 ```
 
 
